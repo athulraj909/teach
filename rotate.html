@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotating Image</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .main {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-image: url('bg-hero.jpg');
+            background-size: cover;
+            position: relative;
+            height: auto;
+        }
+
+
+        .main::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 139, 0.5); 
+            z-index: 1; 
+        }
+
+        .main1{
+            position: relative;
+            z-index: 2;
+            font-size: 30px;
+            color:white;
+            font-family:  Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .image {
+            position: relative;
+            z-index: 2; 
+        }
+
+        .rotating {
+            width: 500px; 
+            height: 500px;
+            animation: rotate 20s linear infinite;
+            opacity: 0.7;
+            padding: 50px;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="main1">
+            <h2>Enjoy Our Meals</h2>
+        </div>
+        <div class="main2">
+            <div class="image">
+                <img src="hero.png" alt="" class="rotating">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
